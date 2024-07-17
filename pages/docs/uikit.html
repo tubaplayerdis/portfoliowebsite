@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>UIKit for TI-Nspire</title>
+    <link rel="icon" type="images/x-icon" href="../../images/book-solid.svg">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+</head>
+
+<body onload="w3_close()">
+
+<div class="w3-sidebar w3-bar-block w3-light-grey" id="mySidebar">
+    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'GettingStarted')">Getting Started</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Downloads')">Downloads</button>
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
+        Core Componets <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="demoAcc" class="w3-hide w3-white w3-card">
+        <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'UIElement')">UIElement</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Color')">Color</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Event')">Event</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Listener')">Listener</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Document')">Document</button>
+    </div>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Label')">Label</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Button')">Button</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Textbox')">Textbox</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Dropdown')">Dropdown</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'TButton')">TButton</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Panel')">Panel</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Slider')">Slider</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'Colorpicker')">Color Picker</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openPage(event, 'TextArea')">Text Area</button>
+</div>
+
+
+<div>
+    <div class="w3-display-container w3-cyan" style="height: 60px">
+        <button class="w3-button w3-cyan w3-xlarge w3-display-left" onclick="w3_open()">☰</button>
+        <h2 class="w3-display-topmiddle">UIKit Documentation</h2>
+        <a href="../../index.html">
+            <button type="button" class="w3-button w3-round-large w3-display-right w3-border w3-blue">Back to aaronwilk.dev</button>
+        </a>
+    </div>
+
+    <div id="Downloads" class="w3-container page" style="display:none">
+        <h2>Downloads</h2>
+        <h3>UIKit Releases</h3>
+        <a href="https://github.com/tubaplayerdis/Nspire-UIKit/releases/tag/v1.0" download>
+            <p>Link</p>
+        </a>
+        <h3>UIKit.tns beta versions - Download most recent</h3>
+        <a href="https://drive.google.com/drive/folders/1nGjENjnVo9WAGlkVMsXtk9ibfiOr8gvK?usp=sharing" download>
+            <p>Link</p>
+        </a>
+        <h3>Examples for UIKit - Github Gists</h3>
+        <a href="https://gist.github.com/tubaplayerdis" download>
+            <p>Link</p>
+        </a>
+        <h3>Developer UIKit.tns versions - do not install as module!</h3>
+        <a href="https://drive.google.com/drive/folders/1WOPNiZzr-VzdiyeSKv1gbO12dRpQiyA7?usp=sharing" download>
+            <p>Link</p>
+        </a>
+        <h3>Github repo for UIKit.tns - please star</h3>
+        <a href="https://github.com/tubaplayerdis/Nspire-UIKit/tree/main" Repo>
+            <p>Github Repo</p>
+        </a>
+    </div>
+
+    <div id="GettingStarted" class="w3-container page" style="display:block">
+        <h2>Getting Started</h2>
+        <p>Download the UIKit.tns file here or on the downloads page and send it to your calculator; then press menu, then actions, then install as python module.</p>
+        <a href="https://github.com/tubaplayerdis/Nspire-UIKit/releases/tag/v1.0" download>
+            <p>UIKit.tns Releases</p>
+        </a>
+        <p>Copy the example code below to get started and to test if you installed the module correctly</p>
+        <script src="https://gist.github.com/tubaplayerdis/cc902cf66d475a672c2c07b3a5bef996.js"></script>
+        <h3>Basics</h3>
+        <h4>Initailize</h4>
+        <p>Use the init() function to initailize the drawing surface</p>
+        <h4>Canvas</h4>
+        <p>The canvas is a list that you add conponents to. Adding other non-conponent types may causes errors though.</p>
+        <h4>Main loop</h4>
+        <p>This isint set up for you, but using the example below it has a loop where all logic and rendering is done. Use this for runtime events.</p>
+        <h4>Global Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>init()</td>
+                <td>Initilizes ti_draw space and sets global pen</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>getStringWidth()</td>
+                <td>Returns int of how many pixles wide the given text is</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>getStringHeight()</td>
+                <td>Return int height of pixels of given text</td>
+                <td>None</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="UIElement" class="w3-container page" style="display:none">
+        <h2>UIElement</h2>
+        <p>The UIElement is the base class for every component, it includes basic methods and can be used to create your own conponents</p>
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>X coordinate of UIElement</td>
+                <td>Int</td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>Y coordinate of UIElement</td>
+                <td>Int</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>Width of UIElement</td>
+                <td>Int</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>Height of UIElement</td>
+                <td>Int</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>isCursor()</td>
+                <td>Checks if the cursor is over the UIElement</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>isClick()</td>
+                <td>Checks if the UIElement was clicked</td>
+                <td>Bool</td>
+            </tr>
+        </table>
+
+        <h4>Events</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Args Type</th>
+            </tr>
+            <tr>
+                <td>cursorEvent</td>
+                <td>Invoked when the cursor is on the UIElement</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>clickEvent</td>
+                <td>Invoked when the UIElement is clicked</td>
+                <td>None</td>
+            </tr>
+        </table>
+
+
+        <h2>Creating your own elements</h2>
+        <p>This process is advanced, so you will need to have some experience with python inheritance and class structure to get it right.</p>
+        <h3>Define Class</h3>
+        <p>Define the class inheriting UIElement. Disclaimer: You can make an element without UIElement, but it wont have the logic defined in the UIElement class</p>
+        <h3>Class constructor: def __init__(self, x, y, width, height)__</h3>
+        <p>Use the class contructor to define any variables that need to be defined at creation and also use them to define the variables of the UIElement base class, if using it</p>
+        <h3>Rendering</h3>
+        <p>When rendering your conponent, you will have to keep a couple things in mind. 1. use the ti_draw library. 2. work with the width and height paramters so that clicking detection works. 3. Include any custom logic in the render function that needs to be repeatable</p>
+        <p>So your element can be rendered on screen, use the method name: render(self) so the method is called correctly in the loop</p>
+        <p>The code below should be a good starting point</p>
+        <script src="https://gist.github.com/tubaplayerdis/a23215cf33e61a315f6979c6fb9b48ef.js"></script>
+    </div>
+
+    <div id="Color" class="w3-container page" style="display:none">
+        <h2>Color</h2>
+        <p>The Color class is the class that holds the color values in RGB for parts of UIElements</p>
+        <p>If a Element has already been defined, use .set() or .mset() to change color instead of assigning a new class</p>
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th>Color(R,G,B)</th>
+                <th>Creates color class and set the RGB values</th>
+            </tr>
+        </table>
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>r value for color</td>
+                <td>Int</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>g value for color</td>
+                <td>Int</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>b value for color</td>
+                <td>Int</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>set(color)</td>
+                <td>Sets a new color with the text, see refrence below</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>mset(R, G, B)</td>
+                <td>Sets a new color with the RGB specified values</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>gset()</td>
+                <td>Globally sets the color to the drawing canvas</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>get()</td>
+                <td>Gets the induvidual values of the color</td>
+                <th>Tuple</th>
+            </tr>
+        </table>
+
+        <h4>Color Codes</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>RGB code</th>
+                <th>Color Preview</th>
+            </tr>
+            <tr>
+                <th>red</th>
+                <th>178,31,53</th>
+                <th><div style="background-color: rgb(178,31,53) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>redorange</th>
+                <th>216,39,53</th>
+                <th><div style="background-color: rgb(216,39,53) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>orange</th>
+                <th>255,116,53</th>
+                <th><div style="background-color: rgb(255,116,53) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>orangeyellow</th>
+                <th>255,161,53</th>
+                <th><div style="background-color: rgb(255,161,53) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>yellow</th>
+                <th>255,240,53</th>
+                <th><div style="background-color: rgb(255,240,53) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>darkgreen</th>
+                <th>0,117,58</th>
+                <th><div style="background-color: rgb(0,117,58) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>green</th>
+                <th>0,158,71</th>
+                <th><div style="background-color: rgb(0,158,71) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>lightgreen</th>
+                <th>22,221,53</th>
+                <th><div style="background-color: rgb(22,221,53) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>darkblue</th>
+                <th>0,82,165</th>
+                <th><div style="background-color: rgb(0,82,165) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>blue</th>
+                <th>0,121,252</th>
+                <th><div style="background-color: rgb(0,121,252) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>lightblue</th>
+                <th>0,169,252</th>
+                <th><div style="background-color: rgb(0,169,252) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>cyan</th>
+                <th>0,255,255</th>
+                <th><div style="background-color: rgb(0,255,255) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>violet</th>
+                <th>104,30,126</th>
+                <th><div style="background-color: rgb(104,30,126) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>purple</th>
+                <th>125,60,181</th>
+                <th><div style="background-color: rgb(125,60,181) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>lightpurple</th>
+                <th>189,122,246</th>
+                <th><div style="background-color: rgb(189,122,246) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>darkbrown</th>
+                <th>95,44,10</th>
+                <th><div style="background-color: rgb(95,44,10) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>brown</th>
+                <th>183,97,39</th>
+                <th><div style="background-color: rgb(183,97,39) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>lightbrown</th>
+                <th>210,138,90</th>
+                <th><div style="background-color: rgb(210,138,90) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>black</th>
+                <th>0,0,0</th>
+                <th><div style="background-color: rgb(0,0,0) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>white</th>
+                <th>255,255,255</th>
+                <th><div style="background-color: rgb(255,255,255) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>gray</th>
+                <th>160,160,160</th>
+                <th><div style="background-color: rgb(160,160, 160) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>lightgray</th>
+                <th>211,211,211</th>
+                <th><div style="background-color: rgb(211, 211, 211) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+            <tr>
+                <th>darkgray</th>
+                <th>105,105,105</th>
+                <th><div style="background-color: rgb(105,105, 105) ; padding: 10px; border: 1px solid rgb(0, 0, 0);"></div></th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="Document" class="w3-container page" style="display:none">
+        <h2>Document</h2>
+        <p>Custom Class for TextArea</p>
+        <p>Used to do word wrapping and storing the text data as lines</p>
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th>Document(x: int, y: int, text: str)</th>
+                <th>Creates a Document</th>
+            </tr>
+        </table>
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>lines</td>
+                <td>holds lines of text</td>
+                <td>List</td>
+            </tr>
+            <tr>
+                <td>algotype</td>
+                <td>type of algorythim used for word wrap. DONT CHANGE.</td>
+                <td>Int</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>calclines(text:str)</td>
+                <td>Calculates and sets lines variable based on text given</td>
+                <td>None</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="Event" class="w3-container page" style="display:none">
+        <h2>Event</h2>
+        <p>Events pass a refrence of the object it is contained in to the listeners</p>
+        <p>Unless you are creating your own UIElements or modfiying existing ones, you will not need to deal with the Event class, Instead look at Listener</p>
+        <p>The Event holds Listeners that can all be called at once via InvokeListeners()</p>
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th>Event()</th>
+                <th>Creates class of Event()</th>
+            </tr>
+        </table>
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>listeners</td>
+                <td>holds the listeners</td>
+                <td>List</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>addListener(listener:Listener)</td>
+                <td>Adds a listener to the Event</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>removeListener(index:Int)</td>
+                <td>Removes a listener from the Event</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>removeAll()</td>
+                <td>Removes all the listeners from the Event</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>InvokeListeners(args: self)</td>
+                <td>Invokes all the Listeners in listeners</td>
+                <th>None</th>
+            </tr>
+        </table>
+
+        <h3>Flow chart and explination below</h3>
+        <div>
+            <!-- use local ref of picture if offline edit-->
+            <img style="float:none" src="https://media.discordapp.net/attachments/1220815201612595204/1220816753580310598/EventSystem_Original.jpg?ex=66105133&is=65fddc33&hm=9e0934c6948ba6afb38c4f402fb477a07e36f43253ea31bec659c6e266e0f8d3&" alt="EventSystemFlowGraph">
+            <p style="float: none;">The Event is normally a variable of a UIElement. It is made in that way so that so that people can add Listeners<br><br>InvokeListeners(arg) is called by from the UIElement when neccacary, such as when a value changes.<br><br>The listeners will then invoke their respective methods.</p>
+        </div>
+
+    </div>
+
+    <div id="Listener" class="w3-container page" style="display:none">
+        <h2>Listener</h2>
+        <p>Listener holds a function refrence that can be used with a Event. you can also specify if it interprets arguments</p>
+        <p>args are passed by the Event they are connected to and the type is refrenced in the documentation</p>
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th>Listener(func: FunctionRef, isargs: Bool)</th>
+                <th>Creates listener that can be used for an event</th>
+            </tr>
+        </table>
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>funcref</td>
+                <td>function refrence for Listener</td>
+                <td>FunctionRef</td>
+            </tr>
+            <tr>
+                <td>isargs</td>
+                <td>function refrence for Listener</td>
+                <td>Bool</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>call(args: Any)</td>
+                <td>Calls the functiion refrence for the Listener</td>
+                <td>None</td>
+            </tr>
+        </table>
+
+        <h4>Simple Example</h4>
+
+        <script src="https://gist.github.com/tubaplayerdis/ab3ebdef5a6c29a12ccabacd686b5655.js"></script>
+
+        <h4>Advanced Example</h4>
+
+        <script src="https://gist.github.com/tubaplayerdis/cdbb20c4bb647833f82946b18e6389fa.js"></script>
+    </div>
+
+    <div id="Label" class="w3-container page" style="display:none">
+        <h2>Label</h2>
+
+        <p>The label is a static text which can be changed</p>
+
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Label(x:Int, y:Int, text:String)</td>
+                <td>Ceates label and sizes accordingly</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>Text for label - dont change directly due to automatic sizing, use setText()</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Color for text of the label</td>
+                <td>Color</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>setText(text:String)</td>
+                <td>Sets text of label and height and width accordingly</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>getText()</td>
+                <td>Gets the current text of the label</td>
+                <td>String</td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+
+    <div id="Button" class="w3-container page" style="display:none">
+        <h2>Button</h2>
+
+        <p>The button is an UIElement that can call a function from a click and return a variable</p>
+
+        <h4>Constructors</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Button(x:Int, y:Int, width:Int, height:Int, text:String, onClick:FunctionRef, arg:Any)</td>
+                <td>Creates Button with a function to call and arguments to pass, onClick and arg can be null</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>Text for button - dont change directly due to automatic sizing</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>onClick</td>
+                <td>Function refrence that is called when the button is clicked</td>
+                <td>Function Ref</td>
+            </tr>
+            <tr>
+                <td>arg</td>
+                <td>Argument to be passed through to the onClick method, use a list and then in the reciving function go though it to implement multiple args</td>
+                <td>Any</td>
+            </tr>
+            <tr>
+                <td>callback</td>
+                <td>Variable returned from the function that is refrenced in onClick</td>
+                <td>Any</td>
+            </tr>
+            <tr>
+                <td>bdcolor</td>
+                <td>Color of the border of the button</td>
+                <td>Color</td>
+            </tr>
+            <tr>
+                <th>bgcolor</th>
+                <th>Background Color</th>
+                <th>Color</th>
+            </tr>
+            <tr>
+                <td>txcolor</td>
+                <td>Color of the text of the button</td>
+                <td>Color</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>setText(text)</td>
+                <td>Sets text of button</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>getText()</td>
+                <td>Gets the current text of the button</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>setSize(width:Int, height:Int)</td>
+                <td>Sets size of button</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>getSize()</td>
+                <td>Gets the current size of the button</td>
+                <td>Tuple</td>
+            </tr>
+        </table>
+
+        <h4>Example</h4>
+        <script src="https://gist.github.com/tubaplayerdis/cc6b9f515762f949d7bc434fdab55e1d.js"></script>
+
+    </div>
+
+    <div id="Textbox" class="w3-container page" style="display:none">
+        <h2>Textbox</h2>
+
+        <p>The Textbox is a dymanic element which recives user input</p>
+
+        <h4>Notes & Use</h4>
+        <p>Edit mode it enterned when the cursor is moved over the Textbox and the enter key is pressed</p>
+        <p>Exit edit mode with esc and when not on handheld use up arrow</p>
+        <p>Edit mode holds the main loop for accurate input</p>
+
+        <h5>Number Mode</h5>
+        <p>Number mode called numMode is a mode for the Textbox that only allows numerical input</p>
+        <p>Current input will be kept, so clear text if changing during runtime</p>
+        <p>toggle number mode with setnumMode() function</p>
+
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Textbox(x:Int, y:Int, width:Int, height:Int, text:String, isreadonly:Bool, isdymaniccharacterlength:Bool)</td>
+                <td>Creates a basic Textbox</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>numMode</td>
+                <td>Mode for whether textbox is only numerical input</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>Text for Textbox - dont change directly due to automatic sizing</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>readonly</td>
+                <td>Determines wherether user input is taken for the Textbox</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>edit</td>
+                <td>Toggles edit mode - still need cursor to be over the textbox to work if manual change</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>CL</td>
+                <td>Character leghth for Textbox</td>
+                <td>Int</td>
+            </tr>
+            <tr>
+                <td>DCL</td>
+                <td>Determines wherether dynamic character length is enabeld</td>
+                <td>Bool</td>
+            </tr>
+        </table>
+        <h4>Colors</h4>
+        <p>Colors are variables just like the ones above, just in their own section in this documentation</p>
+        <table class="w3-table-all">
+            <tr>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Default</td>
+            </tr>
+            <tr>
+                <td>bdcolor</td>
+                <td>Color of the border of the textbox</td>
+                <td>0,0,0</td>
+            </tr>
+            <tr>
+                <td>txcolor</td>
+                <td>Color of the text of the textbox</td>
+                <td>0,0,0</td>
+            </tr>
+            <tr>
+                <td>ndcolor</td>
+                <td>Color of the backround of the textbox when it is not in edit mode</td>
+                <td>160,160,160</td>
+            </tr>
+            <tr>
+                <td>edcolor</td>
+                <td>Color of the backround of the textbox when it is in edit mode</td>
+                <td>210,210,210</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>setnumMode(toggle:Bool)</td>
+                <td>Sets state of numerical input</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>setText(text:String)</td>
+                <td>Sets text of textbox and takes into account DCL but not readonly as readonly is done in render()</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>getText()</td>
+                <td>Gets the current text of the Textbox</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>setSize(width:Int, height:Int)</td>
+                <td>Sets size of textbox</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>getSize()</td>
+                <td>Gets the current size of the textbox</td>
+                <td>Tuple</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="Dropdown" class="w3-container page" style="display:none">
+        <h2>Dropdown</h2>
+
+        <p>The Dropdown is a dymanic element that holds other elements in a dropdown style and can be toggled</p>
+        <p>Use the items[] list so add or remove elements to the dropdown. x and y coords of the element being added do not matter</p>
+        <p>If you are using your own elements, they need to inherit UIElement to be rendered on the dropdown</p>
+
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Dropdown(x:Int, y:Int, width:Int, height:Int, text:String, iscollapsable:Bool)</td>
+                <td>Ceates label and sizes accordingly</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>Text for Dropdown, name</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>items</td>
+                <td>Holds the elements that will be rendered in the dropdown</td>
+                <td>List</td>
+            </tr>
+            <tr>
+                <td>iscollapsable</td>
+                <td>Controls if the dropdown can be expanded</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>collapsed</td>
+                <td>Contains the state of the dropdown, whether or not toggeled</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>buffer</td>
+                <td>Controls how much space beetween elements there are in the dropdown</td>
+                <td>Int</td>
+            </tr>
+        </table>
+
+        <h4>Colors</h4>
+        <p>Colors are variables just like the ones above, just in their own section in this documentation</p>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            <tr>
+                <th>txcolor</th>
+                <th>Text Color</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>bdcolor</th>
+                <th>Border Color</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>bgcolor</th>
+                <th>Backround Color</th>
+                <th>160,160,160</th>
+            </tr>
+            <tr>
+                <th>btcolor</th>
+                <th>Arrow Color</th>
+                <th>0,0,0</th>
+            </tr>
+        </table>
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>addElement(element:UIElement)</td>
+                <td>Adds an element to the dropdown</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>removeElement(index:Int)</td>
+                <td>Removes an element at the selected index</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>removeAll()</td>
+                <td>Removes all elements from the dropdown</td>
+                <td>none</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <div id="TButton" class="w3-container page" style="display:none">
+        <h2>TButton</h2>
+
+        <p>The toggle button is an Button that can be toggeled</p>
+
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>TButton(x:Int, y:Int, width:Int, height:Int, text:String, onClick:FunctionRef, arg:any)</td>
+                <td>Creates Toggle Button with a function to call and arguments to pass, onClick and arg can be null</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>Text for button - dont change directly due to automatic sizing</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>onClick</td>
+                <td>Function refrence that is called when the button is clicked</td>
+                <td>Function Ref</td>
+            </tr>
+            <tr>
+                <td>arg</td>
+                <td>Argument to be passed through to the onClick method, use a list and then in the reciving function go though it to implement multiple args</td>
+                <td>Any</td>
+            </tr>
+            <tr>
+                <td>callback</td>
+                <td>Variable returned from the function that is refrenced in onClick</td>
+                <td>Any</td>
+            </tr>
+            <tr>
+                <td>toggle</td>
+                <td>State of whether or not the button is toggeled</td>
+                <td>Bool</td>
+            </tr>
+        </table>
+
+        <h4>Events</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>onClickEvent</td>
+                <td>Invoked when a click is detected. Uses new system</td>
+            </tr>
+        </table>
+
+        <h4>Colors</h4>
+        <p>Colors are variables just like the ones above, just in their own section in this documentation</p>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            <tr>
+                <th>bdcolor</th>
+                <th>Border Color</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>bgcolor</th>
+                <th>Background Color</th>
+                <th>140,140,140</th>
+            </tr>
+            <tr>
+                <th>oncolor</th>
+                <th>Color of toggle in on state</th>
+                <th>160,160,160</th>
+            </tr>
+            <tr>
+                <th>ofcolor</th>
+                <th>Color of toggle in off state</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>txcolor</th>
+                <th>text Color</th>
+                <th>0,0,0</th>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>setText(text:String)</td>
+                <td>Sets text of toggle button</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>getText()</td>
+                <td>Gets the current text of the toggle button</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>setSize(width:Int, height:Int)</td>
+                <td>Sets size of toggle button</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>getSize()</td>
+                <td>Gets the current size of the toggle button</td>
+                <td>Tuple</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="Panel" class="w3-container page" style="display:none">
+        <h2>Panel</h2>
+
+        <p>The Panel is a UIElement that inherits other elemtns like the dropdown, just not in a orginizational pattern</p>
+        <p>Coordinates of UIElements added to a Panel are interpreted as local coordinates of the panel</p>
+        <p>Only Elements inheriting UIElement can be added to panels as they require the coordinate system integrated into UIElement</p>
+
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Panel(x:Int, y:Int, width:Int, height:Int, isRender:Bool)</td>
+                <td>Creates a Panel and choose whether or not to be rendered</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>items</td>
+                <td>List that stores items to be rendered</td>
+                <td>List</td>
+            </tr>
+            <tr>
+                <td>hasBorder</td>
+                <td>Whether or not the Panel has a border</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>isRender</td>
+                <td>Whether or not the Panel and its items are rendered - do not change directly, use functions</td>
+                <td>Bool</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>toggleRender()</td>
+                <td>toggles the render state of the Panel</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>setRender(state:Bool)</td>
+                <td>set the render state of the panel</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>addElement(element:UIElement)</td>
+                <td>Adds element to the list and with adjusted coordinates</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>removeElement(index:Int)</td>
+                <td>Removes an element in the list at the specified index</td>
+                <td>none</td>
+            </tr>
+            <tr>
+                <td>removeAll()</td>
+                <td>Removes all items in the list</td>
+                <td>none</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+
+    <div id="Slider" class="w3-container page" style="display:none">
+        <h2>Slider</h2>
+        <p>The Slider is an UIElement that lets users choose a value within a range of values</p>
+        <p>The slider is toggeled with enter</p>
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <th>Slider(x:Int, y:Int, width:Int, height:Int, min:Double, max:double, value:Double, isInt:Bool)</th>
+                <th>Creates a slider with the desired arguments</th>
+            </tr>
+        </table>
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>rangemax</td>
+                <td>Maximum range of slider</td>
+                <td>Double</td>
+            </tr>
+            <tr>
+                <td>rangemin</td>
+                <td>Mininum range of slider</td>
+                <td>Double</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>Value of slider</td>
+                <td>Double</td>
+            </tr>
+            <tr>
+                <td>ischange</td>
+                <td>Whether or not the slider is receiving input</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>isint</td>
+                <td>Whether or not the slider returns only ints</td>
+                <td>Bool</td>
+            </tr>
+        </table>
+
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>evalValue()</td>
+                <td>Evaluates the coordinates of the slider knob and updates the value accordingly. This method is ran in render so it does not need to be called.</td>
+                <td>None</td>
+            </tr>
+        </table>
+
+        <h4>Events</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>onChangeValue</td>
+                <td>Invoked when the a new value is detected, passes value of slider</td>
+            </tr>
+            <tr>
+                <td>onSelectValue</td>
+                <td>Invoked when ischange is toggled off, passes value of slider</td>
+            </tr>
+        </table>
+
+        <h4>Colors</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            <tr>
+                <th>bgcolor</th>
+                <th>Backround color</th>
+                <th>160,160,160</th>
+            </tr>
+            <tr>
+                <th>bdcolor</th>
+                <th>Border Color</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>slcolor</th>
+                <th>Color of knob when disabled</th>
+                <th>105,105,105</th>
+            </tr>
+            <tr>
+                <th>selcolor</th>
+                <th>Color of knob when enabeld</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>lncolor</th>
+                <th>Color of slider knob</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>maxtxcolor</th>
+                <th>Color of max value text</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>mintxcolor</th>
+                <th>Color of min value text</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>valbxcolor</th>
+                <th>Color of value box when the slider is enabeld</th>
+                <th>150,150,150</th>
+            </tr>
+            <tr>
+                <th>valbxcolor</th>
+                <th>Color of text in value box</th>
+                <th>0,0,0</th>
+            </tr>
+        </table>
+
+        <h4>Slider Example</h4>
+
+        <script src="https://gist.github.com/tubaplayerdis/cdbb20c4bb647833f82946b18e6389fa.js"></script>
+
+    </div>
+
+
+
+    <div id="Colorpicker" class="w3-container page" style="display:none">
+        <h2>Colorpicker</h2>
+
+        <p>The color picker is an UIElement that allows the user to select a color for another UIElement via a GUI Interfacee</p>
+        <p>THE COLOR PICKER IS NOT RENDERED BY DEFUALT, use the open() method</p>
+        <p>crcolor's color is initially inherited by the constructor</p>
+
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Colorpicker(x:Int, y:Int, width:Int, height:Int, func:Func Ref, arg:Any)</td>
+                <td>Creates a Colorpicker that is ready to be displayed</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>isopen</td>
+                <td>Defualt is false, change to true when ready to render</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <th>crcolor</th>
+                <th>Color currently selected, use this or getColor() for color refrence</th>
+                <th>Color</th>
+            </tr>
+        </table>
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>getColor()</td>
+                <td>return curent color of color picker</td>
+                <td>Color</td>
+            </tr>
+        </table>
+
+        <h4>Events</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>onSelect</td>
+                <td>Invoked when a color is selected</td>
+            </tr>
+            <tr>
+                <td>onOpen</td>
+                <td>Invoked when the colorpicker is opened via the method open()</td>
+            </tr>
+            <tr>
+                <td>onRandom</td>
+                <td>Invoked when the random button is clicked</td>
+            </tr>
+        </table>
+
+        <h4>Colors</h4>
+        <p>Colors are variables just like the ones above, just in their own section in this documentation</p>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            <tr>
+                <th>bdcolor</th>
+                <th>Border Color</th>
+                <th>255,255,255</th>
+            </tr>
+            <tr>
+                <th>bdcolor</th>
+                <th>Background Color</th>
+                <th>105,105,105</th>
+            </tr>
+        </table>
+
+        <h4>Example</h4>
+        <script src="https://gist.github.com/tubaplayerdis/3f282d69d59a2cd706dba598e79108c6.js"></script>
+
+    </div>
+
+    <div id="TextArea" class="w3-container page" style="display:none">
+        <h2>TextArea</h2>
+
+        <p>The TextArea is an UIElement that allow for multi-line user input</p>
+        <p>The TextArea uses a custom UIKit class: Document to store data.
+
+        <h4>Constructor</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>TextArea(x:Int, y:Int, width:Int, height:Int)</td>
+                <td>Creates a TextArea that is ready to be displayed</td>
+            </tr>
+        </table>
+
+        <h4>Variables</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>edit</td>
+                <td>Whether TextArea is in edit mode</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <td>readonly</td>
+                <td>Whether TextArea is in editable</td>
+                <td>Bool</td>
+            </tr>
+            <tr>
+                <th>text</th>
+                <th>Current text of TextArea as a string</th>
+                <th>String</th>
+            </tr>
+            <tr>
+                <th>document</th>
+                <th>Color currently selected, use this or getColor() for color refrence</th>
+                <th>Document</th>
+            </tr>
+        </table>
+
+        <h4>Methods</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td>addText(newtext: str)</td>
+                <td>Appends text to the TextArea</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>setText(newtext: str)</td>
+                <td>Sets text of the TextArea</td>
+                <td>None</td>
+            </tr>
+        </table>
+
+        <h4>Events</h4>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>onTextChange</td>
+                <td>Invoked when User Input is taken</td>
+            </tr>
+            <tr>
+                <td>onEdit</td>
+                <td>Invoked when edit mode is enabled</td>
+            </tr>
+            <tr>
+                <td>onExit</td>
+                <td>Invoked when edit mode is disabled</td>
+            </tr>
+        </table>
+
+        <h4>Colors</h4>
+        <p>Colors are variables just like the ones above, just in their own section in this documentation</p>
+        <table class="w3-table-all">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            <tr>
+                <th>bdcolor</th>
+                <th>Border Color</th>
+                <th>255,255,255</th>
+            </tr>
+            <tr>
+                <th>txcolor</th>
+                <th>Text Color</th>
+                <th>0,0,0</th>
+            </tr>
+            <tr>
+                <th>bdcolor</th>
+                <th>Background Color</th>
+                <th>230,230,230</th>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+    function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-red";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className =
+                x.previousElementSibling.className.replace(" w3-red", "");
+        }
+    }
+
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+    function openPage(evt, pageName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("page");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(pageName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+
+</script>
+
+</body>
+</html>
