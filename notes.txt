@@ -1,0 +1,2 @@
+1. Namecheap premium dns is not premium. automatic dns resolution with namecheap webhosting dns option. no need to manually add dns records.
+2. Namecheap hosting is 5$ a month!! why?
