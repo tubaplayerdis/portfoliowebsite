@@ -221,7 +221,7 @@
                             </p>
                             <p class="card-text">
                                 <small class="text-muted">
-                                    C#, C++
+                                    C#, C++, WinForms
                                 </small>
                             </p>
                         </div>
@@ -254,7 +254,43 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="col" onclick="unhideafter()">
+            <div class="card mb-3" style="max-width:540px; visibility: hidden" id="offensivegamecard">
+                <div class="row g-0">
+                    <div class="col-md-6 text-center">
+                        <img src=
+                                     "../images/projects/previews/SCTG.PNG"
+                             class="img-fluid rounded-start" alt="..."  style="height: 225px; width: 225px">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Social Credit Test Game</h5>
+                            <p class="card-text">
+                                An offensive but funny game based around the 2021 tiktok social credit trend</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    C#, WinForms
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
+<script>
+    count = 0
+    function unhideafter() {
+        count++;
+        console.log("HCC: "+count)
+        if(count === 7) {
+            document.getElementById("offensivegamecard").style.setProperty("visibility", "visible")
+            console.log("Set vis!")
+        }
+    }
+</script>
 </html>
