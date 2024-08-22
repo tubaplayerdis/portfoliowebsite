@@ -1,6 +1,13 @@
 window.onload = function() {  
   fetch("http://aaronwilk.dev/visit")
-  .then(response => response.text())
-  .then(text => console.log(`Number of visits to the site: ${text}`))
-
+    .then(function (response) {
+  	// The API call was successful!
+  	return response.json();
+  }).then(function (data) {
+  	// This is the JSON from our response
+  	console.log(data);
+  }).catch(function (err) {
+  	// There was an error
+  	console.warn('Something went wrong.', err);
+  });
 }
