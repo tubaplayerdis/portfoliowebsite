@@ -1,5 +1,5 @@
 window.onload = function() {
-  fetch("http://localhost:3000/visit")
+  fetch("http://aaronwilk.dev:3000/visit")
   .then(response => response.text())
   .then(text => console.log(text))
 }
