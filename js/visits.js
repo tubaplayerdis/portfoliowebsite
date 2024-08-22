@@ -1,5 +1,5 @@
 window.onload = function() {  
-  fetch("http://aaronwilk.dev/visit")
+  fetch("https://aaronwilk.dev/visit")
     .then(function (response) {
   	// The API call was successful!
   	return response.json();
