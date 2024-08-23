@@ -7,6 +7,21 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/navbarresize.js"></script>
+    <script>
+        window.onload = function () {
+            fetch("https://aaronwilk.dev/visit", {method: "GET"})
+                .then(function (response) {
+                    // The API call was successful!
+                    return response.json();
+                }).then(function (data) {
+                // This is the JSON from our response
+                document.getElementById("webvisittext").textContent = `Visits: ${data.visits}`
+            }).catch(function (err) {
+                // There was an error
+                console.warn('Something went wrong.', err);
+            });
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-light">
@@ -74,8 +89,7 @@
 
     <div class="container mt-5">
         <h1>Website Visit Counter</h1>
-
-        <button class="btn btn-primary" onclick="">Back to homepage</button>
+        <h2 id="webvisittext">Visits: Loading</h2>
 
 
     </div>
