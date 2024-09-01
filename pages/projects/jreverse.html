@@ -11,6 +11,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../../data/jreverse.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('intro paragraph').innerText = data.introparagraph;
+                    document.getElementById("body paragraph1").innerText = data.bodyparagraph1;
+                    document.getElementById("body paragraph2").innerText = data.bodyparagraph2;
+                })
+                .catch(error => console.error('Error fetching JSON:', error));
+        });
+    </script>
 </head>
 <body>
     <!-- #region -->
@@ -79,14 +92,15 @@
 
     <!--Main Content-->
     <h1 class="align-content-center text-center" style="font-family: Signika Negative, sans-serif;">JReverse</h1>
-    <h6 class="align-content-center text-center">JReverse is a desktop application designed for reverse enginnering other java application regardless of version.</h3>
+    <h6 class="align-content-center text-center">JReverse is a desktop application designed for reverse engineering other java application regardless of version.</h6>
 
+    <!-- #region -->
     <!-- Template for Info Sections
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl">
-                <h5>Section Name</h5>
-                Main Text
+                <h3 style="font-family: Roboto Mono, sans-serif;">Section Name</h3>
+                <p id="intro paragraph">Loading...</p>
             </div>
             <div class="col-sm">
                 Picture
@@ -95,8 +109,8 @@
         <hr>
         <div class="row">
             <div class="col-xl">
-                <h5>Section Name</h5>
-                Main text
+                <h3 style="font-family: Roboto Mono, sans-serif;">Section Name</h3>
+                <p id="body paragraph1">Loading...</p>
             </div>
             <div class="col-sm">
                 Picture
@@ -104,25 +118,50 @@
         </div>
     </div>
     -->
+    <!-- #endregion -->
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl">
-                <h5>Section Name</h5>
-                Main Text
+                <h3 style="font-family: Roboto Mono, sans-serif;">Introduction</h3>
+                <p id="intro paragraph">Loading...</p>
             </div>
             <div class="col-sm">
-                Picture
+                <img src="../../images/projects/jreverse/PipeDiagram.JPEG" alt="JReverse Pipe Diagram" style="height: 400px; width: 300px">
+                <h6>A Handwritten Diagram Of JReverse's Old IPC Pipeline</h6>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-xl">
-                <h5>Section Name</h5>
-                Main text
+                <h3 style="font-family: Roboto Mono, sans-serif;">Early Development</h3>
+                <p id="body paragraph1">Loading...</p>
             </div>
             <div class="col-sm">
-                Picture
+                <img src="../../images/projects/jreverse/EarlyClassList.PNG" alt="JReverse Pipe Diagram" style="height: 300px; width: 600px">
+                <h6>Footage of one of the first tests on the IPC system, to load class names.</h6>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xl">
+                <h3 style="font-family: Roboto Mono, sans-serif;">Main Development</h3>
+                <p id="body paragraph2">Loading...</p>
+            </div>
+            <div class="col-sm">
+                <img src="../../images/projects/previews/JReversePreview.png" alt="JReverse Pipe Diagram" style="height: 400px; width: 600px">
+                <h6>The main page of JReverse inaction</h6>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xl">
+                <h3 style="font-family: Roboto Mono, sans-serif;">Now</h3>
+                <p id="body paragraph3">Loading...</p>
+            </div>
+            <div class="col-sm">
+                <img src="../../images/projects/jreverse/EarlyClassList.PNG" alt="JReverse Pipe Diagram" style="height: 300px; width: 600px">
+                <h6>Footage of one of the first tests on the IPC system, to load class names.</h6>
             </div>
         </div>
     </div>
