@@ -20,6 +20,7 @@
                     document.getElementById('intro paragraph').innerText = data.introparagraph;
                     document.getElementById("body paragraph1").innerText = data.bodyparagraph1;
                     document.getElementById("body paragraph2").innerText = data.bodyparagraph2;
+                    document.getElementById("body paragraph3").innerText = data.bodyparagraph3;
                 })
                 .catch(error => console.error('Error fetching JSON:', error));
         });
@@ -160,11 +161,34 @@
                 <p id="body paragraph3">Loading...</p>
             </div>
             <div class="col-sm">
-                <img src="../../images/projects/jreverse/EarlyClassList.PNG" alt="JReverse Pipe Diagram" style="height: 300px; width: 600px">
-                <h6>Footage of one of the first tests on the IPC system, to load class names.</h6>
+                <img src="../../images/projects/jreverse/NowScreenShot.png" alt="JReverse Pipe Diagram" style="height: 300px; width: 600px">
+                <h6>The UI of class dumper, which needs to be reworked.</h6>
             </div>
         </div>
     </div>
+
+    <nav class="navbar navbar-expand-sm bg-dark">
+        <div class="container-fluid" style="display: flex">
+            <!-- Links -->
+            <ul class="navbar-nav fw-bold">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: whitesmoke">Links:</a>
+                </li>
+                <!-- UPDATE THESE LINKS WHEN JREVERSE IS OPEN-SOURCED -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/tubaplayerdis" style="color: whitesmoke">JReverse Github</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/tubaplayerdis" style="color: whitesmoke">JReverse Core Github</a>
+                </li>
+            </ul>
+
+            <!-- Homepage Stuff -->
+            <a class="navbar-brand" href="../projects.html">
+                <button class="btn btn-secondary" >Back to Projects</button>
+            </a>
+        </div>
+    </nav>
 
 </body>
 </html>
