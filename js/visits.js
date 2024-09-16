@@ -1,4 +1,4 @@
-window.onload = function() {  
+window.online = function() {  
   fetch("https://aaronwilk.dev/visit", {method: "POST"})
     .then(function (response) {
   	// The API call was successful!
