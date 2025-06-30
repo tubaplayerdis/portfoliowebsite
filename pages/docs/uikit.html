@@ -450,9 +450,9 @@
 
     <div id="Event" class="w3-container page" style="display:none">
         <h2>Event</h2>
-        <p>Events pass a refrence of the object it is contained in to the listeners</p>
-        <p>Unless you are creating your own UIElements or modfiying existing ones, you will not need to deal with the Event class, Instead look at Listener</p>
-        <p>The Event holds Listeners that can all be called at once via InvokeListeners()</p>
+        <p>Event is a class that introduces a way for multiple callback functions from the same event</p>
+        <p>Event is essentially just an array of the references to callback functions</p>
+        <p>If you are making your own UIElement, Events are used to provide feedback from the UIElements, such as a click.</p>
         <h4>Constructor</h4>
         <table class="w3-table-all">
             <tr>
