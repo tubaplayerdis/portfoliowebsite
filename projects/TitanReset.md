@@ -1,6 +1,8 @@
-# TitanReset - 38535A
+# [TitanReset](https://github.com/tubaplayerdis/Titanreset)
 
-#### PROS library that adds DSR (distance sensor reset) functionality to your robot. Created by Aaron Wilk on V5RC Team 38535A
+## [Explanation Video](https://www.youtube.com/watch?v=TcfUQGeGulI&list=PLNi5ZHPsjqak&index=13)
+
+PROS library that adds DSR (distance sensor reset) functionality to your robot. Created by Aaron Wilk on V5RC Team 38535A
 
 DSR Uses distance sensors and trigonometry to calculate your position on the field at any given moment!
 
