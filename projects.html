@@ -38,7 +38,7 @@
                         const btn = document.createElement('button');
                         btn.type = 'button';
                         btn.textContent = project.name; // button text = filename (no .md)
-                        btn.classList.add('btn', 'btn-outline-primary', 'flex-shrink-0');
+                        btn.classList.add('btn', 'btn-outline-primary', 'flex-shrink-0', 'gap-3');
                         btn.addEventListener('click', () => loadMarkdown(btn.textContent, btn));
                         buttonBar.appendChild(btn);
                     });
