@@ -6,11 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Portfolio</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Beth+Ellen&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 0; /* lets children shrink/scroll instead of overflowing the page */
+        }
+
+        #MarkdownContent {
+            flex: 1 1 auto;
+            overflow-y: auto;
+        }
+    </style>
     <script>
         const API_BASE_URL = 'https://aaronwilk.dev/projectsget';
 
@@ -92,13 +114,14 @@
 </nav>
 
 <main>
+
     <div id="MarkdownContent" class="container py-4">
         <p class="text-muted">Select a project below.</p>
     </div>
     <!-- Add a sidebar for this element with categories of projects then the individual projects themselves. I think the projects should be markdown files and rendered as such -->
     <div class="align-bottom border-top p-2 py-4 container">
         <!-- Horizontally scrollable wrapper -->
-        <div class="d-flex flex-nowrap overflow-auto pb-2 scroll-container" id="ButtonScrollBar">
+        <div class="d-flex flex-nowrap overflow-auto pb-2 scroll-container gap-3" id="ButtonScrollBar">
 
         </div>
     </div>
