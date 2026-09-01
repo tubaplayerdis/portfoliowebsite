@@ -9,6 +9,73 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Beth+Ellen&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono&amp;display=swap">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    <script>
+        const API_BASE_URL = 'https://aaronwilk.dev/projectsget';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttonBar = document.getElementById('ButtonScrollBar');
+            const contentDiv = document.getElementById('MarkdownContent');
+
+            if (!buttonBar) {
+                console.error('#ButtonScrollBar element not found in the DOM.');
+                return;
+            }
+
+            fetch(`${API_BASE_URL}/api/projects`)
+                .then((res) => {
+                    if (!res.ok) throw new Error(`Failed to fetch project list: ${res.status}`);
+                    return res.json();
+                })
+                .then((projects) => {
+                    if (!projects.length) {
+                        buttonBar.textContent = 'No projects found.';
+                        return;
+                    }
+
+                    projects.forEach((project) => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.textContent = project.name; // button text = filename (no .md)
+                        btn.classList.add('btn', 'btn-outline-primary', 'flex-shrink-0');
+                        btn.addEventListener('click', () => loadMarkdown(btn.textContent, btn));
+                        buttonBar.appendChild(btn);
+                    });
+                })
+                .catch((err) => {
+                    console.error(err);
+                    buttonBar.textContent = 'Error loading projects.';
+                });
+
+            function loadMarkdown(name, btnEl) {
+                // Highlight active button (swap outline <-> solid style)
+                document.querySelectorAll('#ButtonScrollBar .btn').forEach((b) => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-outline-primary');
+                });
+                btnEl.classList.remove('btn-outline-primary');
+                btnEl.classList.add('btn-primary');
+
+                fetch(`${API_BASE_URL}/api/projects/${encodeURIComponent(name)}`)
+                    .then((res) => {
+                        if (!res.ok) throw new Error(`Failed to fetch ${name}: ${res.status}`);
+                        return res.text();
+                    })
+                    .then((markdownText) => {
+                        const rawHtml = marked.parse(markdownText);
+                        const cleanHtml = DOMPurify.sanitize(rawHtml); // sanitize before injecting
+                        if (contentDiv) {
+                            contentDiv.innerHTML = cleanHtml;
+                        }
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        if (contentDiv) contentDiv.innerHTML = '<p>Error loading file.</p>';
+                    });
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -25,7 +92,16 @@
 </nav>
 
 <main>
+    <div id="MarkdownContent" class="container py-4">
+        <p class="text-muted">Select a project above.</p>
+    </div>
     <!-- Add a sidebar for this element with categories of projects then the individual projects themselves. I think the projects should be markdown files and rendered as such -->
+    <div class="align-bottom border-top p-2">
+        <!-- Horizontally scrollable wrapper -->
+        <div class="d-flex flex-nowrap overflow-auto pb-2 scroll-container" id="ButtonScrollBar">
+
+        </div>
+    </div>
 </main>
 
 <footer class="text-center bg-body py-4">
