@@ -1,6 +1,9 @@
 # 38535A's Programming
 
-### [Our Engineering Notebook!](https://docs.google.com/presentation/d/1UqmKd77y_-AeYYj_1AJXdd-pftnEJkkwNRlKwLJdAMg/edit?usp=sharing)
+ - ## 2nd worldwide Programming Skills
+ - ## 12th worldwide Skills
+
+### Heres how we did it! [Our Engineering Notebook!](https://docs.google.com/presentation/d/1UqmKd77y_-AeYYj_1AJXdd-pftnEJkkwNRlKwLJdAMg/edit?usp=sharing)
 
 ### Watch the videos going in depth on out programming!
 

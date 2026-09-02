@@ -1,5 +1,12 @@
 # 38535A's Building
 
+The physical robot is just as if not more important than the programming.
+
+- ## 2nd worldwide Programming Skills
+- ## 12th worldwide Skills
+
+### Heres how we did it! [Our Engineering Notebook!](https://docs.google.com/presentation/d/1UqmKd77y_-AeYYj_1AJXdd-pftnEJkkwNRlKwLJdAMg/edit?usp=sharing)
+
 The following links go over the physical construction of 38535A's robot for the 2025-2026 Vex Robotics Game: Pushback
 
  - [Our Engineering Notebook](https://docs.google.com/presentation/d/1UqmKd77y_-AeYYj_1AJXdd-pftnEJkkwNRlKwLJdAMg/edit?usp=sharing)
