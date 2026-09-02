@@ -7,6 +7,8 @@ The following links go over the physical construction of 38535A's robot for the 
 
 ### Renders!
 
-![TitantronWorld26](https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/Titantron_Robot_Worlds_2026-Mar-15_10-38-18PM-000_CustomizedView42660323267_png.png)
+<img src="https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/Titantron_Robot_Worlds_2026-Mar-15_10-38-18PM-000_CustomizedView42660323267_png.png" alt="Description" width="300">
 
-![TitantronWorld25](https://github.com/tubaplayerdis/titanselect/blob/main/images/Worlds_Robot_FINAL.png?raw=true)
+<br>
+
+<img src="https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/Worlds_Robot_FINAL.png" alt="Description2" width="300">
