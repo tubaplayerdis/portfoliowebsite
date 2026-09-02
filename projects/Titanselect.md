@@ -38,8 +38,8 @@ read the following documentation for each language:
 
 ### Showcase
 
-![Titanselect before selecting an auton](images/ts1.png "Titanselect before selecting an auton")
-![Titanselect after selecting an auton](images/ts2.png "Titanselect after selecting an auton")
+![Titanselect before selecting an auton](https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/ts1.png "Titanselect before selecting an auton")
+![Titanselect after selecting an auton](https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/ts2.pngg "Titanselect after selecting an auton")
 
 ### Features
 
