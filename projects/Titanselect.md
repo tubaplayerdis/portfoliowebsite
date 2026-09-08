@@ -1,10 +1,8 @@
 # [Titanselect](https://github.com/tubaplayerdis/titanselect)
 
+![Titanselect after selecting an auton](https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/ts2.png "Titanselect after selecting an auton")
+
 ## [Explanation Video](https://www.youtube.com/watch?v=27p4Ytjyj74&list=PLNi5ZHPsjqak&index=14&pp=iAQBsAgC)
-
-### Guide (Recommended for first time users)
-
-[Titanselect Guide](GUIDE.MD)
 
 Titanselect is a simple visual atuon selector that works on pros. Titanselect was created as a simple auton selector to be used by vex team 38535A after robodash went OOS (Out Of Support)
 
@@ -39,7 +37,7 @@ read the following documentation for each language:
 ### Showcase
 
 ![Titanselect before selecting an auton](https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/ts1.png "Titanselect before selecting an auton")
-![Titanselect after selecting an auton](https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/ts2.pngg "Titanselect after selecting an auton")
+![Titanselect after selecting an auton](https://raw.githubusercontent.com/tubaplayerdis/titanselect/refs/heads/main/images/ts2.png "Titanselect after selecting an auton")
 
 ### Features
 
